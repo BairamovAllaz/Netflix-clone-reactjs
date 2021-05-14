@@ -1,0 +1,93 @@
+.Navbar {
+  width: 100%;
+  height: 50px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: 0.5s;
+
+  .open-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    @media (max-width: 600px) {
+      display: block;
+    }
+  }
+
+  @media (max-width: 600px) {
+    justify-content: space-around;
+  }
+
+  .icon {
+    @media (max-width: 600px) {
+      margin-right: 120px;
+      margin-left: -40px;
+    }
+  }
+
+  .toggles {
+    @media (max-width: 600px) {
+      display: none;
+    }
+    ul {
+      text-decoration: none;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    li {
+      display: block;
+      width: 9vw;
+      height: 50px;
+      text-align: center;
+      margin-top: 40px;
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+    }
+  }
+}
+
+.small {
+  background-color: white;
+  .toggles {
+    li {
+      color: black;
+    }
+  }
+  .icon {
+    color: red;
+    font-size: 20px;
+  }
+}
+
+.minsize {
+  display: block;
+  width: 100vw;
+  height: 60vh;
+  background-color: black;
+  z-index: 1000000;
+  transition: 0.7s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 60px;
+  }
+  li {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    color: lightgray;
+    font-weight: 800;
+  }
+}

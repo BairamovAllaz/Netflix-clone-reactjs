@@ -1,0 +1,100 @@
+.Show-data {
+  width: 100%;
+  height: 70vh;
+  margin-top: 60px;
+}
+
+.Show-data-header {
+  p {
+    color: white;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: 800;
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
+  }
+}
+
+.Show-data-slide-div::-webkit-scrollbar {
+  /* This is the magic bit for WebKit */
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.Show-data-slide-div {
+  width: 100vw;
+  height: 60vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  .Show-slide {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Show-slide-scrolll-in {
+    min-width: 25vw;
+    height: 100%;
+    margin-right: 30px;
+    padding-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+    @media (max-width: 600px) {
+      min-width: 100%;
+    }
+    .image {
+      width: 100%;
+      height: 40vh;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      .middle {
+        width: 100%;
+        height: 100%;
+        transition: 0.5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          opacity: 1;
+        }
+        button {
+          background-color: red;
+          width: 70px;
+          height: 40px;
+          color: white;
+          border-radius: 20px;
+        }
+      }
+      img {
+        margin-left: 10px;
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 20px;
+      color: red;
+      font-weight: 700;
+      @media (max-width: 600px) {
+        margin-top: 25px;
+      }
+    }
+  }
+}

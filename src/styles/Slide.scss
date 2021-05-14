@@ -1,0 +1,60 @@
+.Slide-start {
+  margin-top: 50px;
+  .Slide_inbox {
+    height: 80vh;
+    @media (max-width: 600px) {
+      height: 30vh;
+    }
+  }
+
+  .Image {
+    height: 100%;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .Image-innter-text-div {
+    padding: 40px;
+    @media (max-width: 600px) {
+      padding: 20px;
+    }
+    .title {
+      font-size: 5vw;
+      font-family: monospace;
+      color: white;
+      font-weight: 800;
+    }
+    .icon-header {
+      font-size: 40px;
+      color: red;
+      span {
+        color: white;
+        font-size: 15px;
+      }
+      @media (max-width: 600px) {
+        font-size: 20px;
+      }
+    }
+
+    .upcoming {
+      color: gray;
+      font-weight: 700;
+      font-size: 2vw;
+      span {
+        color: red;
+        font-weight: 400;
+      }
+    }
+
+    .about-text {
+      display: block;
+      min-width: 40vw;
+      max-width: 52vw;
+      font-weight: 800;
+      height: 5vh;
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
+}
