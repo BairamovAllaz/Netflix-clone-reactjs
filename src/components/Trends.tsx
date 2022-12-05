@@ -1,18 +1,23 @@
 import { FC, useEffect } from "react";
+import React from 'react';
 import "../styles/Trend.scss";
 import { Itrends } from "../types/fetchdata";
+import { RefContext } from "../App";
 
 interface prop {
   data: Itrends[];
 }
 
 const Trends: FC<prop> = ({ data }) => {
-  useEffect(() => {
+  const refContext = React.useContext(RefContext);
+
+  React.useLayoutEffect(() => {
     console.log(data[5]);
-  });
+  },[]);
+
   return (
-    <div>
-      <div className='Trends'>
+    <div ref={refContext?.TrendComponentRef}>
+      <div className='Trends' >
         <h1>Trends</h1>
         <div className='container-fluid'>
           <div className='row'>
@@ -28,10 +33,10 @@ const Trends: FC<prop> = ({ data }) => {
                       Title : <span>{data[4].original_title}</span>
                     </li>
                     <li>
-                      Overwiev : <span>{data[4].overview}</span>
+                      Overview : <span>{data[4].overview}</span>
                     </li>
                     <li>
-                      Relase date : <span>{data[4].release_date}</span>
+                      Release date : <span>{data[4].release_date}</span>
                     </li>
                     <li>
                       Views : <span>{data[4].popularity}</span>
@@ -50,7 +55,11 @@ const Trends: FC<prop> = ({ data }) => {
                         className='img-fluid'
                       />
                     </div>
-                    <div className='information'></div>
+                    <div className='information'>
+                      <p>Title: {dat.title}</p>
+                      <p>Release date: {dat.release_date}</p>
+                      <p>Popularity: {dat.popularity}</p>
+                    </div>
                   </div>
                 ))}
               </div>

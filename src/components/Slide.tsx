@@ -1,5 +1,6 @@
 import "../styles/Slide.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
+import React from 'react';
 import SwiperCore, { Autoplay, History, Pagination, Lazy } from "swiper";
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
@@ -10,17 +11,25 @@ import axios from "../api/axios";
 import { useEffect, useState } from "react";
 import request from "../api/Api";
 import { Ifilms } from "../types/fetchdata";
+import { RefContext } from '../App';
 
 SwiperCore.use([Autoplay, History, Pagination, Lazy]);
 
 const Slide = () => {
   const [upcomingdata, setupcomingdata] = useState<Ifilms[]>([]);
+  const context = React.useContext(RefContext);
 
+  
   useEffect(() => {
     axios.get(request.fetchUpcoming).then((dat) => {
       setupcomingdata(dat.data.results);
     });
   }, []);
+
+
+  React.useEffect(() => { 
+    console.log(context?.HomeComponentRef);
+  }, [context?.HomeComponentRef])
 
   const getContrastYIQ = (hexcolor: any) => {
     var r = parseInt(hexcolor.substr(0, 2), 16);
@@ -31,7 +40,7 @@ const Slide = () => {
   };
 
   return (
-    <div className='Slide_all'>
+    <div className='Slide_all' ref={context?.HomeComponentRef}>
       <div className='Slide-start'>
         <Swiper
           pagination={true}

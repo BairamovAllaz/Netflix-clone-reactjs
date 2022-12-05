@@ -5,11 +5,12 @@ import Showdata from "./Showdatas";
 import { Itrends } from "../types/fetchdata";
 import { Ifilms } from "../types/fetchdata";
 import Trends from "./Trends";
+import { isNonNullExpression } from "typescript";
 const Datas = () => {
-  const [trendfilms, settrendfilms] = useState<Itrends[]>([]);
-  const [upcomingfilms, setupcomingfilms] = useState<Ifilms[]>([]);
-  const [latestfilms, setlatest] = useState<Ifilms[]>([]);
-  const [topratedfilms, settopratefilms] = useState<Ifilms[]>([]);
+  const [trendfilms, settrendfilms] = useState<Itrends[] | null>(null);
+  const [upcomingfilms, setupcomingfilms] = useState<Ifilms[] | null>(null);
+  const [latestfilms, setlatest] = useState<Ifilms[] | null>(null);
+  const [topratedfilms, settopratefilms] = useState<Ifilms[] | null>(null);
 
   useEffect(() => {
     axios.get(request.fetchUpcoming).then((dat) => {
@@ -25,6 +26,10 @@ const Datas = () => {
     });
   }, []);
 
+  if(!upcomingfilms || !topratedfilms || !trendfilms)
+  { 
+    return <h1>Loding...</h1>
+  }
   return (
     <div>
       <Showdata title='Upcoming films' data={upcomingfilms} />

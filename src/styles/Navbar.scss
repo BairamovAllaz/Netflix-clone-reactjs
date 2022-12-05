@@ -5,6 +5,8 @@
   display: flex;
   align-items: center;
   position: fixed;
+  font-size: 20px;
+  line-height: 25px;
   top: 0;
   z-index: 1000;
   transition: 0.5s;
@@ -15,6 +17,7 @@
     cursor: pointer;
     @media (max-width: 600px) {
       display: block;
+      margin-right: 20px;
     }
   }
 
@@ -24,8 +27,7 @@
 
   .icon {
     @media (max-width: 600px) {
-      margin-right: 120px;
-      margin-left: -40px;
+      margin-right: auto;
     }
   }
 
