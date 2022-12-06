@@ -1,5 +1,6 @@
 .Trends {
   min-height: 80vh;
+
   h1 {
     text-align: center;
     padding: -10px;
@@ -9,10 +10,12 @@
     color: white;
     padding-bottom: 20px;
   }
+
   .first-trend {
     @media (max-width: 600px) {
       min-height: 60vh;
     }
+
     min-height: 80vh;
 
     .indiv {
@@ -21,16 +24,19 @@
         text-decoration: none;
         padding: 40px;
       }
+
       li {
         color: white;
         font-size: 1vw;
         font-weight: 800;
         border-bottom: solid 1px lightgray;
         padding: 6px;
+
         @media (max-width: 600px) {
           font-size: 4vw;
         }
       }
+
       li span {
         color: red;
       }
@@ -42,9 +48,11 @@
   height: 100vh;
   background-color: black;
   overflow-y: scroll;
+
   @media (max-width: 600px) {
     height: 80vh;
   }
+
   .in-alltrends {
     width: 100%;
     min-height: 120px;
@@ -52,16 +60,23 @@
     padding: 30px;
     display: flex;
     flex-wrap: nowrap;
+
     .img {
       flex: 1 1 30%;
       height: 100%;
+      position: relative;
+      margin: 20px auto 0;
+      width: 100%;
+
       @media (max-width: 600px) {
         flex: 1 1 60%;
       }
     }
-    p { 
-      color : white;
-      padding : 5px
+
+    p {
+      color: white;
+      padding: 5px;
+      padding-left: 20px;
     }
 
     .information {

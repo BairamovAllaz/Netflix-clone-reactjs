@@ -2,18 +2,17 @@ import { FC, useEffect } from "react";
 import React from 'react';
 import { Ifilms, Itrends } from "../types/fetchdata";
 import "../styles/Showdata.scss";
-import { RefContext } from "../App";
+
 interface prop {
   title: string;
   data: Ifilms[];
 }
 
 const Showdatas: FC<prop> = ({ title, data }) => {
-  const refContext = React.useContext(RefContext);
 
   return (
     <div>
-      <div className='Show-data' ref={refContext?.UpcomingComponentRef}>
+      <div className='Show-data'>
         <div className='Show-data-header'>
           <p>{title}</p>
         </div>
@@ -27,9 +26,6 @@ const Showdatas: FC<prop> = ({ title, data }) => {
                     width='100%'
                     height='100%'
                   />
-                  <div className='middle'>
-                    <button>See</button>
-                  </div>
                 </div>
                 <p>{s.title}</p>
               </div>

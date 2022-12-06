@@ -11,10 +11,6 @@ interface prop {
 const Trends: FC<prop> = ({ data }) => {
   const refContext = React.useContext(RefContext);
 
-  React.useLayoutEffect(() => {
-    console.log(data[5]);
-  },[]);
-
   return (
     <div ref={refContext?.TrendComponentRef}>
       <div className='Trends' >
@@ -23,10 +19,12 @@ const Trends: FC<prop> = ({ data }) => {
           <div className='row'>
             <div className='col-md-4 col-sm-12'>
               <div className='first-trend'>
+                <div className = "Img-div"> 
                 <img
                   src={`https://image.tmdb.org/t/p/original/${data[4].backdrop_path}`}
                   className='img-fluid'
                 />
+                </div>
                 <div className='indiv'>
                   <ul>
                     <li>

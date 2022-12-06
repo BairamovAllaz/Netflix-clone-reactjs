@@ -5,7 +5,9 @@ import { GrMenu } from "react-icons/gr";
 import { ImCancelCircle } from "react-icons/im";
 import { useEffect, useState } from "react";
 import { RefContext, types } from '../App';
+
 const Navbar = () => {
+
   const [small, setSmall] = useState<boolean>(false);
   const refContext = React.useContext(RefContext);
   const [opentoggle, setopentoggle] = useState<boolean>(false);
